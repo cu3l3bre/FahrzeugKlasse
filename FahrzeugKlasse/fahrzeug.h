@@ -24,11 +24,17 @@ public:
 	double holeBenzinVerbrauch();
 
 	void setzeTankfuellstand(double);
-	void setzebenzinVerbrauch(double);
+	void setzeBenzinVerbrauch(double);
+
+	void tanken(double);
+
+	void fahren(double);
+
+
 
 	void beschleunigen();	// Geschwindigkeit erhoehen
 	void bremsen();			// Geschwindigkeit verringern
-
+	
 
 };
 
