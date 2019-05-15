@@ -33,9 +33,6 @@ void Fahrzeug::setzeBenzinVerbrauch(double neuerVerbrauch)
 }
 
 
-
-
-
 // Methode, die das Tanken simulieren soll
 void Fahrzeug::tanken(double literAnzahl)
 {
@@ -55,31 +52,17 @@ void Fahrzeug::tanken(double literAnzahl)
 // Methode, um das Fahren zu simulieren
 void Fahrzeug::fahren(double strecke)
 {
-	cout << "Sie sind " << strecke << " gefahren" << endl;
+	double voraussichtlicherVerbrauch = (strecke * (benzinVerbrauch / 100)); // [l = km * (l / km)]
 
-	double verbrauchtesBenzin = (strecke * (benzinVerbrauch / 100)); // [l = km * (l / km)]
-	tankfuellstand -= verbrauchtesBenzin;	// tankfuellstand = tankfuellstand - verbrauchtesBenzin;
+	if (voraussichtlicherVerbrauch <= tankfuellstand)
+	{
+		cout << "Sie sind " << strecke << " gefahren" << endl;
+
+		// Tankfuellstand aktualisieren
+		tankfuellstand -= voraussichtlicherVerbrauch;	// tankfuellstand = tankfuellstand - voraussichtlicherVerbrauch;
+	}
+	else
+	{
+		cout << "Sie haben nicht genug Benzin" << endl;
+	}
 }
-
-
-
-
-void Fahrzeug::beschleunigen()
-{
-
-	;
-}
-
-
-void Fahrzeug::bremsen()
-{
-
-	;
-}
-
-
-
-
-
-
-

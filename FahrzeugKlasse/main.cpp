@@ -10,7 +10,9 @@ int main()
 	cout << "Programm zu Fahrzeugklasse" << endl << endl;
 
 	// Anlegen eines Objektes der Klasse Fahrzeug
-	Fahrzeug opel;
+	Fahrzeug opel;			// Verwendung des standard Konstruktors
+	Fahrzeug bmw(5, 12.0);	// Verwendung des allgemeinen Konstruktors
+	
 
 	opel.setzeTankfuellstand(80);
 	opel.setzeBenzinVerbrauch(5.0);
@@ -20,7 +22,7 @@ int main()
 	cout << "Benzinverbauch des Fahrzeugs:\t" << opel.holeBenzinVerbrauch() << endl;
 
 
-	opel.fahren(400);
+	opel.fahren(3000);
 
 	cout << opel.holeTankfuellstand() << endl;
 
